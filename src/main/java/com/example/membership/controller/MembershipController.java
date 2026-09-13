@@ -8,14 +8,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
 @Slf4j
-@Controller
+@RestController
 @CrossOrigin(origins = "http://localhost:3000") // Next 요청 허용
 public class MembershipController {
 
@@ -26,8 +24,9 @@ public class MembershipController {
         this.membershipService = membershipService;
     }
 
-    @PostMapping("/api/memberships/register")
-    public void registerUser(Users userDto, Memberships membershipDto) {
-        membershipService.registerUser(userDto, membershipDto);
+    @PostMapping("/api/userMembership/register")
+    public void registerUserMembership(@RequestBody UserMemberships userMembershipDto) {
+        System.out.println("TEST = " + userMembershipDto.getUserId() + " " + userMembershipDto.getMembershipId());
+        membershipService.registerUser(userMembershipDto);
     }
 }

@@ -5,15 +5,11 @@ import com.example.membership.dto.UserMemberships;
 import com.example.membership.dto.Users;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import java.lang.reflect.Member;
 import java.util.Optional;
 
-public interface MembershipRepository extends JpaRepository<Users, Long> {
-
-    void save(UserMemberships userMemberships);
+public interface MembershipRepository extends JpaRepository<Memberships, Long> {
 
     Optional<Memberships> getMembershipsByMembershipId(long id);
-
-    Optional<UserMemberships> getUserMembershipsByUserIdAndMembershipId(long userId, long membershipId);
-
 
 }
