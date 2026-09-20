@@ -29,7 +29,7 @@ public class Users {
     private String userName;
 
     @Nonnull
-    private String membershipId;
+    private long membershipId;
 
     @CreationTimestamp
     private String createdAt;

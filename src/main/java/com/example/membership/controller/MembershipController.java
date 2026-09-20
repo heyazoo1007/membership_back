@@ -26,7 +26,6 @@ public class MembershipController {
 
     @PostMapping("/api/userMembership/register")
     public void registerUserMembership(@RequestBody UserMemberships userMembershipDto) {
-        System.out.println("TEST = " + userMembershipDto.getUserId() + " " + userMembershipDto.getMembershipId());
-        membershipService.registerUser(userMembershipDto);
+        membershipService.registerUserMembership(userMembershipDto);
     }
 }
