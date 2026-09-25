@@ -1,16 +1,11 @@
 package com.example.membership.controller;
 
-import com.example.membership.dto.Memberships;
 import com.example.membership.dto.UserMemberships;
-import com.example.membership.dto.Users;
 import com.example.membership.service.MembershipService;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
 
 @Slf4j
 @RestController

@@ -10,9 +10,9 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class ApiErrorResponse {
 
-	@JsonProperty("errorCode")
+	@JsonProperty("code")
 	private String code;
-	@JsonProperty("statusText")
+	@JsonProperty("message")
 	private String message;
 
 	public static ApiErrorResponse from(ErrorCode errorCode) {

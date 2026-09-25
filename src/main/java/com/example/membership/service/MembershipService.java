@@ -36,7 +36,6 @@ public class MembershipService {
 
         // 1. 멤버십 등록된 사용자인지 확인(중복 등록 방지)
         Optional<UserMemberships> userMembership = userMembershipsRepository.getUserMembershipsByUserIdAndMembershipId(userMembershipDto.getUserId(), userMembershipDto.getMembershipId());
-
         if (!userMembership.isEmpty()) {
             // avoid duplicate join
             throw BaseException.DUPLICATE_USER_MEMBERSHIP; // You've already joined this membership.
@@ -50,7 +49,7 @@ public class MembershipService {
             throw BaseException.OUT_OF_MEMBERSHIP_OCCUPATION; // membership is out of occupation.
         }
 
-        // 3. 멤버십 증가
+        // 3. 유저-멤버십 추가
         UserMemberships userMembershipVO = new UserMemberships();
         userMembershipVO.setUserId(userMembershipDto.getUserId());
         userMembershipVO.setMembershipId(userMembershipDto.getMembershipId());
