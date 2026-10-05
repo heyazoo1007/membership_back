@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
-@CrossOrigin(origins = "http://localhost:3000") // Next 요청 허용
+@CrossOrigin(origins = "http://localhost:3000, http://3.34.95.55:3000") // 로컬/배포 Next 요청 허용
 public class MembershipController {
 
     private MembershipService membershipService;
