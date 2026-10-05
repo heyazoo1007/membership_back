@@ -1,5 +1,6 @@
 package com.example.membership.controller;
 
+import com.example.membership.common.response.ApiSuccessResponse;
 import com.example.membership.dto.UserMemberships;
 import com.example.membership.service.MembershipService;
 import lombok.extern.slf4j.Slf4j;
@@ -20,7 +21,9 @@ public class MembershipController {
     }
 
     @PostMapping("/api/userMembership/register")
-    public void registerUserMembership(@RequestBody UserMemberships userMembershipDto) {
+    public ApiSuccessResponse<?> registerUserMembership(@RequestBody UserMemberships userMembershipDto) {
         membershipService.registerUserMembership(userMembershipDto);
+
+        return ApiSuccessResponse.NO_DATA_RESPONSE;
     }
 }
